@@ -3,30 +3,30 @@ framework:
   version: 0.26
 
 deps:
-- '@development-tools'
-- python3
-- python3-devel
-- python3-pip
-- libffi-devel
-- curl
+  - "@development-tools"
+  - python3
+  - python3-devel
+  - python3-pip
+  - libffi-devel
+  - curl
 
 alpine-deps:
-- curl
-- libffi-dev
-- openssl-dev
+  - curl
+  - libffi-dev
+  - openssl-dev
 
 # install maturin to build orjson
 # @see https://github.com/ijl/orjson/issues/8#issuecomment-570335365
 bootstrap:
-- curl https://sh.rustup.rs > init.sh
-- sh init.sh -y
-- find /root/.cargo/bin -type f -exec install {} /usr/local/bin \;
-- python3 -m pip install -r requirements.txt -U
+  - curl https://sh.rustup.rs > init.sh
+  - sh init.sh -y
+  - find /root/.cargo/bin -type f -exec install {} /usr/local/bin \;
+  - python3 -m pip install -r requirements.txt -U
 
 files:
-- server.py
-- requirements.txt
-- ../.config/gunicorn.py
+  - server.py
+  - requirements.txt
+  - ../.config/gunicorn.py
 
 environment:
   RUSTFLAGS: -C target-feature=-crt-static

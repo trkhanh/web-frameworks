@@ -3,8 +3,8 @@ framework:
   version: 20.3
 
 files:
-- server.py
-- requirements.txt
-- ../.config/gunicorn.py
+  - server.py
+  - requirements.txt
+  - ../.config/gunicorn.py
 
 command: python server.py

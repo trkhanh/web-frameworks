@@ -5,5 +5,5 @@ framework:
 build_opts: --link-flags "-lxml2 -llzma"
 
 build_deps:
-- libxml2-dev
-- liblzma-dev
+  - libxml2-dev
+  - liblzma-dev

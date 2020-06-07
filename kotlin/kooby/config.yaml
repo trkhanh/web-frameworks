@@ -5,7 +5,7 @@ framework:
 image: gradle:6.1-jdk8
 
 build:
-- gradle clean shadowJar
+  - gradle clean shadowJar
 
 command: >-
   /usr/bin/java -server
